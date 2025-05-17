@@ -1,4 +1,4 @@
-class Students{
+class Student{
 	private String name;
 	private int exam1 ;
 	private int exam2 ;
@@ -13,7 +13,7 @@ class Students{
 		}
 	}
 	
-	Students(String name,int e1,int e2,int e3)throws Exception{
+	Student(String name,int e1,int e2,int e3)throws Exception{
 		this.name=name;
 		
 		if(validateMarks(e1)&&validateMarks(e2)&&validateMarks(e3)){
@@ -26,7 +26,7 @@ class Students{
 			throw new Exception("Invalid Marks!");
 		}
 	}
-	Students(){}
+	Student(){}
 		
 	String getName(){
 		return name;
@@ -44,11 +44,11 @@ class Students{
 	public static void main(String[] args){
 	
 		try{
-		Students a1=new Students("Jhon",75,11,90);
+		Student a1=new Student("Jhon",75,11,90);
 		System.out.println("the name of the Student is "+ a1.getName()+". The exam score is "+ a1.getExam1());
 		System.out.println("the name of the Student is "+ a1.getName()+". The exam score is "+ a1.getExam2());
 		System.out.println("the name of the Student is "+ a1.getName()+". The exam score is "+ a1.getExam3());
-		Students a2=new Students("Ann",75,80,-55);
+		Student a2=new Student("Ann",75,80,-55);
 		System.out.println("the name of the Student is "+ a2.getName()+". The exam score is "+ a2.getExam1());
 		System.out.println("the name of the Student is "+ a2.getName()+". The exam score is "+ a2.getExam2());
 		System.out.println("the name of the Student is "+ a2.getName()+". The exam score is "+ a2.getExam3());
