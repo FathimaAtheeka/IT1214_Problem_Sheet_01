@@ -13,7 +13,7 @@ class Student{
 		}
 	}
 	
-	Student(String name,int e1,int e2,int e3)throws Exception{
+	Student(String name,int e1,int e2,int e3){
 		this.name=name;
 		
 		if(validateMarks(e1)&&validateMarks(e2)&&validateMarks(e3)){
@@ -22,8 +22,7 @@ class Student{
 			exam3=e3;
 		}
 		else{
-			System.out.println("Setting the marks value to 0");
-			throw new Exception("Invalid Marks!");
+			throw new IllegalArgumentException("Setting the marks value to 0.Invalid Marks!");
 		}
 	}
 	Student(){}
@@ -51,7 +50,7 @@ class StudentGradeCalculator{
 	public static void main(String[] args){
 	
 		try{
-		Student s1=new Student("Jhon",75,110,90);
+		Student s1=new Student("Jhon",75,11,90);
 		System.out.println("Student name is"+s1.getName()+". Student Average score is:"+s1.calculateAverage());
 		
 		}
