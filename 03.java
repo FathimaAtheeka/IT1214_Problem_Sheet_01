@@ -12,19 +12,19 @@ class BankAccount{
     public int getAccountNumber(){
         return accountNumber;
     }
-    public setAccountNumber(int accountNumber){
+    public void setAccountNumber(int accountNumber){
         this.accountNumber = accountNumber;
     }
     public String getAccountHolder(){
         return accountHolder;
     }
-    public setAccountHolder(String accountHolder){
+    public void setAccountHolder(String accountHolder){
         this.accountHolder = accountHolder;
     }
-    public int getBalance(){
+    public double getBalance(){
         return balance;
     }
-    public setBalance(int balance){
+    public void setBalance(double balance){
         this.balance = balance;
     }
 
@@ -35,7 +35,7 @@ class BankAccount{
         balance -= amount;
     }
 
-    public void displayAccountdetails(){
+    public String displayAccountdetails(){
         return "Account Number: " + accountNumber + "Account Holder: " + accountHolder + "Balance: " + balance ;
     }
 
@@ -50,10 +50,10 @@ class Bank{
     }
 
     public void addAccount(BankAccount account){
-        if(accountCount < accounts.lenght){
+        if(accountCount < accounts.length){
             accounts[accountCount++] = account;
         }else{
-            System.out.println("Cannot add more accounts. Maximum limit reached.")
+            System.out.println("Cannot add more accounts. Maximum limit reached.");
         }
     }
     public void withdrawFromAccount(int accountNumber, double amount){
@@ -63,7 +63,7 @@ class Bank{
                     accounts[i].withdraw(amount);
                     System.out.println("Withdrawal successful from account " + accountNumber);
                 }
-                catch(IllegalArgumentException){
+                catch(IllegalArgumentException e){
                     System.out.println(e.getMessage());
                 }
                 return;
@@ -73,12 +73,12 @@ class Bank{
     }
     public void displayAllAccounts(){
         for(int i = 0; i < accountCount; i++){
-            System.out.println(accounts[i].displayDetails());
+            System.out.println(accounts[i].displayAccountdetails());
         }
     }
 }
 
-public class BankAccountManager{
+class BankAccountManager{
     public static void main (String[] args){
         Bank bank = new Bank();
 
