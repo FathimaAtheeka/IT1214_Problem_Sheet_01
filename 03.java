@@ -82,8 +82,12 @@ class BankAccountManager{
     public static void main (String[] args){
         Bank bank = new Bank();
 
-        bank.addAccount(new BankAccount(1001, "Alice", 5000.0));
-        bank.addAccount(new BankAccount(1002, "Bob", 3000.0));
+        BankAccount alice = new BankAccount(1001,"Alice",5000.0);
+        BankAccount bob = new BankAccount(1002,"Bob",3000.0);
+
+
+        bank.addAccount(alice);
+        bank.addAccount(bob);
 
         bank.withdrawFromAccount(1001, 6000.0);
         bank.withdrawFromAccount(1002, 1000.0);

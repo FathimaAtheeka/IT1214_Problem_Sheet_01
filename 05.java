@@ -57,8 +57,6 @@ class StudentGradeCalculator{
 		catch(Exception e){
 			System.out.println("Exception Message:"+e.getMessage());
 		}
-	
-		
 
 	}
 }
