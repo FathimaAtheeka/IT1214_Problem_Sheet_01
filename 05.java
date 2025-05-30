@@ -50,7 +50,7 @@ class StudentGradeCalculator{
 	public static void main(String[] args){
 	
 		try{
-		Student s1=new Student("Jhon",75,11,90);
+		Student s1=new Student("Jhon",75,-110,90);
 		System.out.println("Student name is"+s1.getName()+". Student Average score is:"+s1.calculateAverage());
 		
 		}
